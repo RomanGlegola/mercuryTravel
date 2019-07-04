@@ -12,7 +12,7 @@ public class RegisterPage {
     private WebElement firstName;
     private WebElement lastName;
     private WebElement phone;
-    private WebElement email;
+    private WebElement emaila;
     private WebElement adress;
     private WebElement state;
     private WebElement city;
@@ -30,14 +30,16 @@ public class RegisterPage {
         firstName = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[2]/td[2]/input"));
         lastName = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[3]/td[2]/input"));
         phone = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[4]/td[2]/input"));
-        email = driver.findElement(By.xpath("//*[@id=\"userName\"]"));
+        emaila = driver.findElement(By.xpath("//*[@id=\"userName\"]"));
         adress = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[7]/td[2]/input"));
         city = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[9]/td[2]/input"));
-        state = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[10]/td[2]/input"));
+        state = driver.findElement(By.name("state")); //gdzie to znaleźć?
         postalCode = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[11]/td[2]/input"));
         country = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[12]/td[2]/select"));
-        password = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[15]/td[2]/input"));
-        cPassword = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[16]/td[2]/input"));
+        userName = driver.findElement(By.cssSelector("#email"));
+        
+        password = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[15]/td[2]/input")); //gdzie to znaleźć?
+        cPassword = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[16]/td[2]/input")); //gdzie to znaleźć?
     }
 
     public boolean isRegisterHeadingVisible() {
@@ -47,7 +49,7 @@ public class RegisterPage {
     public boolean isFirstName() {return WaitTools.isElementVisible(driver, firstName);}
     public boolean isLastName() {return WaitTools.isElementVisible(driver, lastName);}
     public boolean isPhone() {return WaitTools.isElementVisible(driver, phone);}
-    public boolean isEmail() {return WaitTools.isElementVisible(driver, email);}
+    public boolean isEmaila() {return WaitTools.isElementVisible(driver, emaila);}
     public boolean isAddress() {return WaitTools.isElementVisible(driver, adress);}
     public boolean isCity(){return WaitTools.isElementVisible(driver, city);}
     public boolean isState() {return WaitTools.isElementVisible(driver, state);}
@@ -58,44 +60,44 @@ public class RegisterPage {
     public boolean isCPassword() {return WaitTools.isElementVisible(driver, cPassword);}
 
     public void addFirstName() throws InterruptedException {
-        firstName.sendKeys("Radek");}
+        firstName.sendKeys("Roman");}
 
     public void addLastName() throws InterruptedException {
-        lastName.sendKeys("Sikorski");}
+        lastName.sendKeys("Glegola");}
 
     public void addPhone() throws InterruptedException {
-        phone.sendKeys("666666666");}
+        phone.sendKeys("725 588 138");}
 
     public void addEmailAddress() throws InterruptedException {
-        email.sendKeys("test@test.com");
+        emaila.sendKeys("haaritsubaki@gmail.com");
     }
 
     public void addAdress() throws InterruptedException {
-        adress.sendKeys("0101010101010101010101010101010101010101");
+        adress.sendKeys("ul. Sikorskiego 11");
     }
 
     public void addCity() throws InterruptedException {
-        city.sendKeys("0101010101010101010101010101010101010101");
+        city.sendKeys("Stegna");
     }
 
     public void addState() throws InterruptedException {
-        state.sendKeys("0101010101010101010101010101010101010101");
+        state.sendKeys("Pomorskie");
     }
 
     public void addPostalCode() throws InterruptedException {
-        postalCode.sendKeys("0101010101010101010101010101010101010101");
+        postalCode.sendKeys("82-103");
     }
     public void addCountry() throws InterruptedException {
-        country.sendKeys("0101010101010101010101010101010101010101");
+        country.sendKeys("Polska");
     }
     public void addUserName() throws InterruptedException {
-        userName.sendKeys("0101010101010101010101010101010101010101");
+        userName.sendKeys("Roman");
     }
     public void addPassword() throws InterruptedException {
-        password.sendKeys("0101010101010101010101010101010101010101");
+        password.sendKeys("tu mialem trudnosci");
     }
     public void addCPassword() throws InterruptedException {
-        cPassword.sendKeys("0101010101010101010101010101010101010101");
+        cPassword.sendKeys("haslo123");
     }
 
 
